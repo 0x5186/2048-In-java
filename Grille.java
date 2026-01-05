@@ -90,10 +90,10 @@ public class Grille {
                             grille[position - 1][colonne] = valeur;
                             grille[position][colonne] = 0;
                             position--;
-
-
                             break;
+
                         } else {
+
                             grille[position - 1][colonne] = valeur;
                             grille[position][colonne] = 0;
                             position--;

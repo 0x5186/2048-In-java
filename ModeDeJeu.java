@@ -18,11 +18,12 @@ public class ModeDeJeu {
             // Appeler méthode qui affiche le tableau
             AffichageDuJeu.afficher(grille);
 
-            System.out.println("\n\nChoisissez un mode de déplacement :");
+            System.out.println("\n\nChoisissez un mode de déplacement :\n");
             System.out.println("Z (Haut)");
             System.out.println("Q (Gauche)");
             System.out.println("S (Bas)");
             System.out.println("D (Droite)");
+            System.out.println("Taper 5 pour quitter le mode de jeu.\n");
             System.out.print("\n➤ Entrez votre choix : ");
 
             char direction = tt.next().toUpperCase().charAt(0);
@@ -55,11 +56,12 @@ public class ModeDeJeu {
 
             AffichageDuJeu.afficher(grille);
 
-            System.out.println("\n\nChoisissez un mode de déplacement :");
+            System.out.println("\n\nChoisissez un mode de déplacement :\n");
             System.out.println("Z (Haut)");
             System.out.println("Q (Gauche)");
             System.out.println("S (Bas)");
             System.out.println("D (Droite)");
+            System.out.println("Taper 5 pour quitter le mode de jeu.\n");
             System.out.print("\n➤ Entrez votre choix : ");
 
             char direction = tt.next().toUpperCase().charAt(0);
@@ -91,11 +93,12 @@ public class ModeDeJeu {
 
             AffichageDuJeu.afficher(grille);
 
-            System.out.println("\n\nChoisissez un mode de déplacement :");
+            System.out.println("\n\nChoisissez un mode de déplacement :\n");
             System.out.println("Z (Haut)");
             System.out.println("Q (Gauche)");
             System.out.println("S (Bas)");
             System.out.println("D (Droite)");
+            System.out.println("Taper 5 pour quitter le mode de jeu.\n");
             System.out.print("\n➤ Entrez votre choix : ");
 
             char direction = tt.next().toUpperCase().charAt(0);
@@ -139,11 +142,12 @@ public class ModeDeJeu {
 
             AffichageDuJeu.afficherQuatreD(GrilleQuatre);
 
-            System.out.println("\n\nChoisissez un mode de déplacement :");
+            System.out.println("\n\nChoisissez un mode de déplacement :\n");
             System.out.println("Z (Haut)");
             System.out.println("Q (Gauche)");
             System.out.println("S (Bas)");
             System.out.println("D (Droite)");
+            System.out.println("Taper 5 pour quitter le mode de jeu.\n");
             System.out.print("\n➤ Entrez votre choix : ");
 
             char direction = tt.next().toUpperCase().charAt(0);
@@ -159,6 +163,8 @@ public class ModeDeJeu {
 
             // Ajouter UNE seule valeur au total parmi les 4 grilles
             Grille.ajouterValeurQuatreD(GrilleQuatre);
+
+
 
         }
 
