@@ -18,6 +18,20 @@ public class ModeDeJeu {
             // Appeler méthode qui affiche le tableau
             AffichageDuJeu.afficher(grille);
 
+            // Vérifier victoire
+            if (Grille.contient2048(grille)) {
+                System.out.println("\n");
+                System.out.println("╔════════════════════════════════════════╗");
+                System.out.println("║                                        ║");
+                System.out.println("║              Tu as gagné !             ║");
+                System.out.println("║         Tu as atteint les 2048 !       ║");
+                System.out.println("║                                        ║");
+                System.out.println("╚════════════════════════════════════════╝");
+                System.out.println();
+                break;
+            }
+
+
             System.out.println("\n\nChoisissez un mode de déplacement :\n");
             System.out.println("Z (Haut)");
             System.out.println("Q (Gauche)");
@@ -30,6 +44,26 @@ public class ModeDeJeu {
 
             Grille.deplacerGrille(grille, direction, 4);
             Grille.ajouterValeur(grille, 4);
+
+            // Vérifier défaite
+            if (!Grille.mouvementPossible(grille)) {
+                // Afficher la grille finale
+                System.out.println("╔════════════════════════════════════════╗");
+                System.out.println("║             Mode Classique             ║");
+                System.out.println("╚════════════════════════════════════════╝");
+                AffichageDuJeu.afficher(grille);
+
+
+                // Message défaite
+                System.out.println("\n");
+                System.out.println("╔════════════════════════════════════════════╗");
+                System.out.println("║                                            ║");
+                System.out.println("║        Tu as malheureusement perdu         ║");
+                System.out.println("║            Mouvement impossible            ║");
+                System.out.println("╚════════════════════════════════════════════╝");
+                System.out.println();
+                break;
+            }
 
             if (direction == '5') {
                 break;
@@ -56,6 +90,19 @@ public class ModeDeJeu {
 
             AffichageDuJeu.afficher(grille);
 
+            // Vérifier victoire
+            if (Grille.contient2048(grille)) {
+                System.out.println("\n");
+                System.out.println("╔════════════════════════════════════════╗");
+                System.out.println("║                                        ║");
+                System.out.println("║              Tu as gagné !             ║");
+                System.out.println("║         Tu as atteint les 2048 !       ║");
+                System.out.println("║                                        ║");
+                System.out.println("╚════════════════════════════════════════╝");
+                System.out.println();
+                break;
+            }
+
             System.out.println("\n\nChoisissez un mode de déplacement :\n");
             System.out.println("Z (Haut)");
             System.out.println("Q (Gauche)");
@@ -69,6 +116,25 @@ public class ModeDeJeu {
             Grille.deplacerGrille(grille, direction, 5);
 
             Grille.ajouterValeur(grille, 5);
+
+            // Vérifier défaite
+            if (!Grille.mouvementPossible(grille)) {
+                // Afficher la grille finale
+                System.out.println("╔════════════════════════════════════════╗");
+                System.out.println("║                Mode 5x5                ║");
+                System.out.println("╚════════════════════════════════════════╝");
+                AffichageDuJeu.afficher(grille);
+
+                // Message défaite
+                System.out.println("\n");
+                System.out.println("╔════════════════════════════════════════════╗");
+                System.out.println("║                                            ║");
+                System.out.println("║        Tu as malheureusement perdu         ║");
+                System.out.println("║            Mouvement impossible            ║");
+                System.out.println("╚════════════════════════════════════════════╝");
+                System.out.println();
+                break;
+            }
 
             if (direction == '5'){
                 break;
@@ -93,6 +159,19 @@ public class ModeDeJeu {
 
             AffichageDuJeu.afficher(grille);
 
+            // Vérifier victoire
+            if (Grille.contient2048(grille)) {
+                System.out.println("\n");
+                System.out.println("╔════════════════════════════════════════╗");
+                System.out.println("║                                        ║");
+                System.out.println("║              Tu as gagné !             ║");
+                System.out.println("║         Tu as atteint les 2048 !       ║");
+                System.out.println("║                                        ║");
+                System.out.println("╚════════════════════════════════════════╝");
+                System.out.println();
+                break;
+            }
+
             System.out.println("\n\nChoisissez un mode de déplacement :\n");
             System.out.println("Z (Haut)");
             System.out.println("Q (Gauche)");
@@ -105,6 +184,25 @@ public class ModeDeJeu {
 
             Grille.deplacerGrille(grille, direction, 8);
             Grille.ajouterValeur(grille, 8);
+
+            // Vérifier défaite
+            if (!Grille.mouvementPossible(grille)) {
+                // Afficher la grille finale
+                System.out.println("╔════════════════════════════════════════╗");
+                System.out.println("║                Mode 8x8                ║");
+                System.out.println("╚════════════════════════════════════════╝");
+                AffichageDuJeu.afficher(grille);
+
+                // Message défaite
+                System.out.println("\n");
+                System.out.println("╔════════════════════════════════════════════╗");
+                System.out.println("║                                            ║");
+                System.out.println("║        Tu as malheureusement perdu         ║");
+                System.out.println("║            Mouvement impossible            ║");
+                System.out.println("╚════════════════════════════════════════════╝");
+                System.out.println();
+                break;
+            }
 
             if (direction == '5'){
                 break;
@@ -142,6 +240,26 @@ public class ModeDeJeu {
 
             AffichageDuJeu.afficherQuatreD(GrilleQuatre);
 
+            // Vérifier victoire dans LES 4 GRILLES
+            boolean victoire = false;
+            for (int i = 0; i < 4; i++) {
+                if (Grille.contient2048(GrilleQuatre[i])) {
+                    victoire = true;
+                    break;
+                }
+            }
+            if (victoire) {
+                System.out.println("\n");
+                System.out.println("╔════════════════════════════════════════╗");
+                System.out.println("║                                        ║");
+                System.out.println("║              Tu as gagné !             ║");
+                System.out.println("║         Tu as atteint les 2048 !       ║");
+                System.out.println("║                                        ║");
+                System.out.println("╚════════════════════════════════════════╝");
+                System.out.println();
+                break;
+            }
+
             System.out.println("\n\nChoisissez un mode de déplacement :\n");
             System.out.println("Z (Haut)");
             System.out.println("Q (Gauche)");
@@ -164,7 +282,30 @@ public class ModeDeJeu {
             // Ajouter UNE seule valeur au total parmi les 4 grilles
             Grille.ajouterValeurQuatreD(GrilleQuatre);
 
+            // Vérifier défaite dans TOUTES LES 4 GRILLES
+            boolean defaite = true;
+            for (int i = 0; i < 4; i++) {
+                if (Grille.mouvementPossible(GrilleQuatre[i])) {
+                    defaite = false; // Au moins une grille peut encore jouer
+                    break;
+                }
+            }
 
+            if (defaite) {
+                System.out.println("╔════════════════════════════════════════╗");
+                System.out.println("║                 Mode 4D                ║");
+                System.out.println("╚════════════════════════════════════════╝");
+                AffichageDuJeu.afficherQuatreD(GrilleQuatre);
+
+                System.out.println("\n");
+                System.out.println("╔════════════════════════════════════════════╗");
+                System.out.println("║                                            ║");
+                System.out.println("║        Tu as malheureusement perdu         ║");
+                System.out.println("║            Mouvement impossible            ║");
+                System.out.println("╚════════════════════════════════════════════╝");
+                System.out.println();
+                break;
+            }
 
         }
 

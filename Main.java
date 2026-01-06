@@ -3,10 +3,6 @@ public class Main {
     public static void main(String[] args){
         Scanner tt = new Scanner(System.in);
 
-        int LONGUEUR = 4;
-
-        int[][] tableau_2048 = new int[LONGUEUR][LONGUEUR];
-
 
         // les types de choix de l'user
         int choixJoueur = 0;

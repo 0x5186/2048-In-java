@@ -72,6 +72,48 @@ public class Grille {
 
     }
 
+    public static boolean contient2048 (int[][] grille) {
+        for (int i = 0; i < grille.length; i++) {
+            for (int j = 0; j < grille[i].length; j++) {
+                if (grille[i][j] == 2048) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static boolean mouvementPossible(int[][] grille) {
+        //on verifie si il y a des cases vides
+        for(int i = 0; i < grille.length; i++) {
+            for (int j = 0; j < grille[i].length; j++) {
+                if (grille[i][j] == 0) {
+                    return true; //mouvement possible car case vide = 0
+                }
+            }
+        }
+
+        //on verifie les fusions possible horizontalement
+        for (int i = 0; i < grille.length; i++) {
+            for (int j = 0; j < grille[i].length - 1; j++) {
+                if (grille[i][j] == grille[i][j + 1]) {
+                    return true; //fusion possible horizontalement
+                }
+            }
+        }
+
+        //on verifie les fusions possible verticalement
+        for (int i = 0; i < grille.length - 1; i++) {
+            for (int j = 0; j < grille[i].length; j++) {
+                if (grille[i][j] == grille[i + 1][j]) {
+                    return true; //fusion possible verticalement
+                }
+            }
+        }
+
+        return false; //aucun mouvement possible
+    }
+
     private static void deplacerVersHaut(int[][] grille) {
 
         for (int ligne = 0; ligne < grille.length; ligne++){
